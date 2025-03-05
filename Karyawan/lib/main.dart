@@ -4,9 +4,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:karyawan/models/karyawan.dart';
 
+
 void main() {
   runApp(const MyApp());
 }
+
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -33,21 +35,21 @@ class MyHomePage extends StatelessWidget {
     final List<dynamic> data = json.decode(response);
     return data.map((json) => Karyawan.fromJson(json)).toList();
   }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        title: const Text("Daftar Karyawan"),
+        backgroundColor: Theme.of(context).
+        colorScheme.inversePrimary,
+        title: const Text('Daftar Karyawan'),
       ),
       body: FutureBuilder<List<Karyawan>>(
-        future: _readJsonData(),
-        builder: (context, snapshot) {
-          if (snapshot.hasData) {
+        future: _readJsonData(), 
+        builder: (context, snapshot){
+          if (snapshot.hasData){
             return ListView.builder(
               itemCount: snapshot.data!.length,
-              itemBuilder: (context, index) {
+              itemBuilder: (context, index){
                 return ListTile(
                   title: Text(
                     snapshot.data![index].nama,
@@ -56,26 +58,23 @@ class MyHomePage extends StatelessWidget {
                   subtitle: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text("Umur: ${snapshot.data![index].umur} tahun"),
-                      Text("Alamat: ${snapshot.data![index].alamat.jalan}, "
-                          "${snapshot.data![index].alamat.kota}, "
-                          "${snapshot.data![index].alamat.provinsi}"),
-                      //Tampilkan HOBBY
-                      if (snapshot.data![index].hobi.length > 1)
-                        Text("Hobi: ${snapshot.data![index].hobi[1]}"),
+                      Text("Umur : ${snapshot.data![index].umur} tahun"),
+                      Text("Alamat : ${snapshot.data![index].alamat.jalan},"
+                      "${snapshot.data![index].alamat.kota},"
+                      "${snapshot.data![index].alamat.provinsi},"),
+                      
                     ],
                   ),
                 );
               },
             );
-          } else if (snapshot.hasError) {
+          }else if(snapshot.hasError){
             return Center(
               child: Text('${snapshot.error}'),
             );
           }
           return const Center(child: CircularProgressIndicator());
-        },
-      ),
+        }),
     );
   }
 }
