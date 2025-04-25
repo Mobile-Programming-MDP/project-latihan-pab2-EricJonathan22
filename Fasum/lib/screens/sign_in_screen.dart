@@ -1,16 +1,17 @@
-import 'package:flutter/material.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:fasum/screens/home_screen.dart';
 import 'package:fasum/screens/sign_up_screen.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/foundation.dart';
+import 'package:flutter/material.dart';
 
-class SignInScreen extends StatefulWidget {
-  const SignInScreen({Key? key});
+class SigninScreen extends StatefulWidget {
+  const SigninScreen({super.key});
 
   @override
-  SignInScreenState createState() => SignInScreenState();
+  State<SigninScreen> createState() => _SigninScreenState();
 }
 
-class SignInScreenState extends State<SignInScreen> {
+class _SigninScreenState extends State<SigninScreen> {
   final _emailController = TextEditingController();
   final _passwordController = TextEditingController();
 
@@ -53,7 +54,8 @@ class SignInScreenState extends State<SignInScreen> {
                       password: _passwordController.text,
                     );
                     Navigator.of(context).pushReplacement(
-                      MaterialPageRoute(builder: (context) => const HomeScreen()),
+                      MaterialPageRoute(
+                          builder: (context) => const HomeScreen()),
                     );
                   } catch (error) {
                     setState(() {
@@ -73,7 +75,8 @@ class SignInScreenState extends State<SignInScreen> {
                 onPressed: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => const SignUpScreen()),
+                    MaterialPageRoute(
+                        builder: (context) => const SignupScreen()),
                   );
                 },
                 child: const Text('Don\'t have an account? Sign up'),
