@@ -33,10 +33,7 @@ class DefaultFirebaseOptions {
           'you can reconfigure this by running the FlutterFire CLI again.',
         );
       case TargetPlatform.windows:
-        throw UnsupportedError(
-          'DefaultFirebaseOptions have not been configured for windows - '
-          'you can reconfigure this by running the FlutterFire CLI again.',
-        );
+        return windows;
       case TargetPlatform.linux:
         throw UnsupportedError(
           'DefaultFirebaseOptions have not been configured for linux - '
@@ -50,21 +47,33 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyC3ai2RLeDkIVE1ouKIRAj54FADKM7EysI',
-    appId: '1:297417949941:web:3288fe179b3121c020bbbc',
-    messagingSenderId: '297417949941',
-    projectId: 'fasum-j',
-    authDomain: 'fasum-j.firebaseapp.com',
-    databaseURL: 'https://fasum-j-default-rtdb.firebaseio.com',
-    storageBucket: 'fasum-j.firebasestorage.app',
+    apiKey: 'AIzaSyBSj0syS4YOsy7Ox5fkksMDt_FYlONGmSo',
+    appId: '1:333195091288:web:201029d027466c43bb592d',
+    messagingSenderId: '333195091288',
+    projectId: 'app-first-7ee27',
+    authDomain: 'app-first-7ee27.firebaseapp.com',
+    databaseURL: 'https://app-first-7ee27-default-rtdb.firebaseio.com',
+    storageBucket: 'app-first-7ee27.firebasestorage.app',
+    measurementId: 'G-9B7BWP4R9F',
   );
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyCGwtTC4MDmcLyI-H55ucEOc2w9jGzM37A',
-    appId: '1:297417949941:android:a890c1698a91914920bbbc',
-    messagingSenderId: '297417949941',
-    projectId: 'fasum-j',
-    databaseURL: 'https://fasum-j-default-rtdb.firebaseio.com',
-    storageBucket: 'fasum-j.firebasestorage.app',
+    apiKey: 'AIzaSyAKcy4dP2yU9tIYqDqOoWQZPJ5mEmRxjCs',
+    appId: '1:333195091288:android:0abe54b3601b5127bb592d',
+    messagingSenderId: '333195091288',
+    projectId: 'app-first-7ee27',
+    databaseURL: 'https://app-first-7ee27-default-rtdb.firebaseio.com',
+    storageBucket: 'app-first-7ee27.firebasestorage.app',
+  );
+
+  static const FirebaseOptions windows = FirebaseOptions(
+    apiKey: 'AIzaSyBSj0syS4YOsy7Ox5fkksMDt_FYlONGmSo',
+    appId: '1:333195091288:web:db649c1ba667a6adbb592d',
+    messagingSenderId: '333195091288',
+    projectId: 'app-first-7ee27',
+    authDomain: 'app-first-7ee27.firebaseapp.com',
+    databaseURL: 'https://app-first-7ee27-default-rtdb.firebaseio.com',
+    storageBucket: 'app-first-7ee27.firebasestorage.app',
+    measurementId: 'G-MTXTFPLY8R',
   );
 }
