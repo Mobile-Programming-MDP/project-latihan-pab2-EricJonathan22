@@ -76,4 +76,5 @@ class DefaultFirebaseOptions {
     storageBucket: 'app-first-7ee27.firebasestorage.app',
     measurementId: 'G-MTXTFPLY8R',
   );
+
 }
