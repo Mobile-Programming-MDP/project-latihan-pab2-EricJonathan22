@@ -11,6 +11,7 @@ class SignUpScreen extends StatefulWidget {
 }
 
 class _SignUpScreenState extends State<SignUpScreen> {
+  final __fullNameController = TextEditingController();
   final _emailController = TextEditingController();
   final _passwordController = TextEditingController();
   final _confirmPasswordController = TextEditingController();
@@ -23,6 +24,10 @@ class _SignUpScreenState extends State<SignUpScreen> {
         padding: const EdgeInsets.all(16.0),
         child: Column(
           children: [
+            TextField(
+              controller: __fullNameController,
+              decoration: const InputDecoration(labelText: 'Full Name'),
+            ),
             TextField(
               controller: _emailController,
               decoration: const InputDecoration(labelText: 'Email'),
